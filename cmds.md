@@ -6,3 +6,7 @@ gcloud compute tpus tpu-vm create $TPU_NAME --zone=$TPU_ZONE --accelerator-type=
 
 gcloud alpha compute tpus tpu-vm ssh $TPU_NAME --zone europe-west4-a --project learning-from-play-303306 -- -L 8888:localhost:8888
 
+
+pip3 install --upgrade pip
+pip3 install "jax[tpu]>=0.2.16" -f https://storage.googleapis.com/jax-releases/libtpu_releases.html
+
