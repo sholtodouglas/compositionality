@@ -3,7 +3,10 @@ import PIL
 
 def generate_mask(image: PIL.Image) -> PIL.Image:
     """
-    Creates a mask. White means replace
+    Creates a mask. White means replace, black means keep.
+    blended is a preview of the picture for debugging purposes.
+    This function is probably not the fastest way of doing this at scale,
+    jax.numpy can probably just create a giant vector of tensors with all the masks.
     """
     # Base mask is all black (keep)
     mask = PIL.Image.new("RGB", image.size, 0)
