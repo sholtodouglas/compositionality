@@ -360,6 +360,8 @@ class FlaxInpaintingStableDiffusionPipeline(FlaxDiffusionPipeline):
             images = _p_generate(
                 self,
                 prompt_ids,
+                image,
+                mask_image,
                 params,
                 prng_seed,
                 num_inference_steps,
@@ -373,6 +375,8 @@ class FlaxInpaintingStableDiffusionPipeline(FlaxDiffusionPipeline):
         else:
             images = self._generate(
                 prompt_ids,
+                image,
+                mask_image,
                 params,
                 prng_seed,
                 num_inference_steps,
